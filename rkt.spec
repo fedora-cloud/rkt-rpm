@@ -38,7 +38,7 @@ Release: 4.git%{shortcommit0}%{?dist}
 Summary: CLI for running app containers
 License: ASL 2.0
 URL: https://%{import_path}
-ExclusiveArch: x86_64
+ExclusiveArch: %{go_arches}
 Source0: %{git0}/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
 BuildRequires: autoconf
 BuildRequires: automake

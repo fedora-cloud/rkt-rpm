@@ -32,14 +32,14 @@
 # valid values: coreos usr-from-src usr-from-host
 %global stage1_flavors host
 
-Name:       %{repo}
-Version:    %{version}
-Release:    4.git%{shortcommit0}%{?dist}
-Summary:    CLI for running app containers
-License:    ASL 2.0
-URL:        https://%{import_path}
-ExclusiveArch:  x86_64
-Source0:    %{git0}/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
+Name: %{repo}
+Version: %{version}
+Release: 4.git%{shortcommit0}%{?dist}
+Summary: CLI for running app containers
+License: ASL 2.0
+URL: https://%{import_path}
+ExclusiveArch: x86_64
+Source0: %{git0}/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: bc
@@ -168,8 +168,8 @@ Requires(postun): systemd >= 222
 
 %if 0%{?with_devel}
 %package devel
-Summary:       %{summary}
-BuildArch:     noarch
+Summary: %{summary}
+BuildArch: noarch
 
 %if 0%{?with_check} && ! 0%{?with_bundled}
 %endif
@@ -183,14 +183,14 @@ which use import path with %{import_path} prefix.
 
 %if 0%{?with_unit_test} && 0%{?with_devel}
 %package unit-test-devel
-Summary:         Unit tests for %{name} package
+Summary: Unit tests for %{name} package
 %if 0%{?with_check}
 #Here comes all BuildRequires: PACKAGE the unit tests
 #in %%check section need for running
 %endif
 
 # test subpackage tests code from devel subpackage
-Requires:        %{name}-devel = %{version}-%{release}
+Requires: %{name}-devel = %{version}-%{release}
 
 %description unit-test-devel
 %{summary}

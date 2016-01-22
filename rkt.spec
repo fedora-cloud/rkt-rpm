@@ -27,13 +27,12 @@
 %global import_path %{provider}.%{provider_tld}/%{project}/%{repo}
 %global commit0 5988b72f9ba517c06fa20436d2eb29d4e1dafd08
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global version 0.15.0
 
 # valid values: coreos usr-from-src usr-from-host
 %global stage1_flavors host
 
 Name: %{repo}
-Version: %{version}
+Version: 0.15.0
 Release: 4.git%{shortcommit0}%{?dist}
 Summary: CLI for running app containers
 License: ASL 2.0

@@ -44,7 +44,7 @@ BuildRequires: automake
 BuildRequires: bc
 BuildRequires: git
 BuildRequires: glibc-static
-BuildRequires: golang >= 1.3.3
+BuildRequires: golang >= 1.6
 BuildRequires: go-bindata >= 3.0.7-1
 BuildRequires: gperf
 BuildRequires: gnupg

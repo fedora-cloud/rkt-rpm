@@ -200,6 +200,7 @@ providing packages with %{import_path} prefix.
 
 %prep
 %setup -q -n %{name}-%{commit0}
+sed -i 's/GO_BEST_MINOR=5/GO_BEST_MINOR=6/' configure.ac
 
 %build
 ./autogen.sh

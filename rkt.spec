@@ -55,6 +55,7 @@ BuildRequires: libgcrypt-devel
 BuildRequires: libtool
 BuildRequires: libmount-devel
 BuildRequires: libxkbcommon-devel
+BuildRequires: trousers-devel
 BuildRequires: perl-Config-Tiny
 BuildRequires: squashfs-tools
 BuildRequires: systemd >= 222

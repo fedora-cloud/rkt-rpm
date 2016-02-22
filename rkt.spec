@@ -33,7 +33,7 @@
 
 Name: %{repo}
 Version: 1.0.0
-Release: 8.git%{shortcommit0}%{?dist}
+Release: 9.git%{shortcommit0}%{?dist}
 Summary: CLI for running app containers
 License: ASL 2.0
 URL: https://%{import_path}
@@ -306,6 +306,9 @@ exit 0
 %{_sharedstatedir}/%{name}
 
 %changelog
+* Mon Feb 22 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.0-9.gitd842d09
+- https://fedoraproject.org/wiki/Changes/golang1.6
+
 * Mon Feb 22 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.0.0-8.gitd842d09
 - built commit#d842d09
 

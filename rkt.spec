@@ -300,7 +300,7 @@ exit 0
 %license LICENSE
 %doc CONTRIBUTING.md DCO README.md Documentation/*
 %{_bindir}/%{name}
-%{_bindir}/%{name}-data-dir-setup.sh
+%{_bindir}/%{name}-setup-data-dir.sh
 %{_libexecdir}/%{name}/stage1-host.aci
 %{_unitdir}/%{name}*
 %{_datadir}/bash-completion/completions/%{name}

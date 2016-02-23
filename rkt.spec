@@ -25,7 +25,7 @@
 
 %global git0 https://%{provider}.%{provider_tld}/%{project}/%{repo}
 %global import_path %{provider}.%{provider_tld}/%{project}/%{repo}
-%global commit0 d842d09d87e431a36e6449635ce33530d0f79e02
+%global commit0 9003f4ac9ec51fe59d37b7d97383efe09aa06afb
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # valid values: coreos usr-from-src usr-from-host
@@ -33,7 +33,7 @@
 
 Name: %{repo}
 Version: 1.0.0
-Release: 9.git%{shortcommit0}%{?dist}
+Release: 10.git%{shortcommit0}%{?dist}
 Summary: CLI for running app containers
 License: ASL 2.0
 URL: https://%{import_path}
@@ -45,7 +45,6 @@ BuildRequires: bc
 BuildRequires: git
 BuildRequires: glibc-static
 BuildRequires: golang >= 1.6
-BuildRequires: go-bindata >= 3.0.7-1
 BuildRequires: gperf
 BuildRequires: gnupg
 BuildRequires: intltool
@@ -216,6 +215,7 @@ install -dp %{buildroot}{%{_bindir},%{_libexecdir}/%{name},%{_unitdir}}
 install -dp %{buildroot}%{_sharedstatedir}/%{name}
 
 install -p -m 755 build-%{name}-%{version}+git/bin/%{name} %{buildroot}%{_bindir}
+install -p -m 755 dist/scripts/setup-data-dir.sh %{buildroot}%{_bindir}/%{name}-setup-data-dir.sh
 install -p -m 644 build-%{name}-%{version}+git/bin/stage1-host.aci %{buildroot}%{_libexecdir}/%{name}
 
 # install bash completion
@@ -271,7 +271,7 @@ getent group %{name} >/dev/null || groupadd -r %{name}
 exit 0
 
 %post
-%{_bindir}/%{name} install
+%{_bindir}/%{name}-setup-data-dir.sh
 %systemd_post %{name}-metadata.service
 
 %preun
@@ -299,13 +299,18 @@ exit 0
 %files
 %license LICENSE
 %doc CONTRIBUTING.md DCO README.md Documentation/*
-%{_bindir}/%{name}
+%{_bindir}/%{name}*
 %{_libexecdir}/%{name}/stage1-host.aci
 %{_unitdir}/%{name}*
 %{_datadir}/bash-completion/completions/%{name}
 %{_sharedstatedir}/%{name}
 
 %changelog
+* Tue Feb 23 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.0.0-10.git9003f4a
+- built commit#9003f4a
+- replace 'rkt install' with rkt-setup-data-dir.sh
+- remove go-bindata dependency
+
 * Mon Feb 22 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.0-9.gitd842d09
 - https://fedoraproject.org/wiki/Changes/golang1.6
 

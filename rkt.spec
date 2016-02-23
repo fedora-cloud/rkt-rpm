@@ -33,7 +33,7 @@
 
 Name: %{repo}
 Version: 1.0.0
-Release: 10.git%{shortcommit0}%{?dist}
+Release: 11.git%{shortcommit0}%{?dist}
 Summary: CLI for running app containers
 License: ASL 2.0
 URL: https://%{import_path}
@@ -299,13 +299,16 @@ exit 0
 %files
 %license LICENSE
 %doc CONTRIBUTING.md DCO README.md Documentation/*
-%{_bindir}/%{name}*
+%{_bindir}/%{name}
+%{_bindir}/%{name}-data-dir-setup.sh
 %{_libexecdir}/%{name}/stage1-host.aci
 %{_unitdir}/%{name}*
 %{_datadir}/bash-completion/completions/%{name}
-%{_sharedstatedir}/%{name}
 
 %changelog
+* Tue Feb 23 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.0.0-11.git9003f4a
+- do not remove /var/lib/rkt on uninstall
+
 * Tue Feb 23 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.0.0-10.git9003f4a
 - built commit#9003f4a
 

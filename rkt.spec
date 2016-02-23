@@ -308,8 +308,6 @@ exit 0
 %changelog
 * Tue Feb 23 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.0.0-10.git9003f4a
 - built commit#9003f4a
-- replace 'rkt install' with rkt-setup-data-dir.sh
-- remove go-bindata dependency
 
 * Mon Feb 22 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.0-9.gitd842d09
 - https://fedoraproject.org/wiki/Changes/golang1.6

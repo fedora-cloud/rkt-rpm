@@ -25,7 +25,7 @@
 
 %global git0 https://%{provider}.%{provider_tld}/%{project}/%{repo}
 %global import_path %{provider}.%{provider_tld}/%{project}/%{repo}
-%global commit0 9003f4ac9ec51fe59d37b7d97383efe09aa06afb
+%global commit0 07235a79ca5767920fd764532bb126e90532b235
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # valid values: coreos usr-from-src usr-from-host
@@ -33,7 +33,7 @@
 
 Name: %{repo}
 Version: 1.0.0
-Release: 11.git%{shortcommit0}%{?dist}
+Release: 12.git%{shortcommit0}%{?dist}
 Summary: CLI for running app containers
 License: ASL 2.0
 URL: https://%{import_path}
@@ -306,6 +306,9 @@ exit 0
 %{_datadir}/bash-completion/completions/%{name}
 
 %changelog
+* Wed Feb 24 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.0.0-12.git07235a7
+- built commit#07235a7
+
 * Tue Feb 23 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.0.0-11.git9003f4a
 - do not remove /var/lib/rkt on uninstall
 

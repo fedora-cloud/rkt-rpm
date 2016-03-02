@@ -303,6 +303,7 @@ exit 0
 %{_libexecdir}/%{name}/stage1-host.aci
 %{_unitdir}/%{name}*
 %{_datadir}/bash-completion/completions/%{name}
+%{_sharedstatedir}/%{name}
 
 %changelog
 * Wed Mar 02 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.1.0-2.git5a19dc6

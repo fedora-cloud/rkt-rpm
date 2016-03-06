@@ -33,7 +33,7 @@
 
 Name: %{repo}
 Version: 1.1.0
-Release: 4.git%{shortcommit0}%{?dist}
+Release: 5.git%{shortcommit0}%{?dist}
 Summary: CLI for running app containers
 License: ASL 2.0
 URL: https://%{import_path}
@@ -306,6 +306,9 @@ exit 0
 %{_sharedstatedir}/%{name}
 
 %changelog
+* Sun Mar 06 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.1.0-5.git63522c3
+- built commit#63522c3
+
 * Fri Mar 04 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.1.0-4.git63522c3
 - built commit#63522c3
 

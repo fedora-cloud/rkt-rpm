@@ -306,7 +306,7 @@ exit 0
 %{_sharedstatedir}/%{name}
 
 %changelog
-* Wed Mar 09 2016 Lokesh Mandvekar <> - 1.1.0-7.git7b07bf2
+* Wed Mar 09 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.1.0-7.git7b07bf2
 - built commit#7b07bf2
 
 * Mon Mar 07 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.1.0-6.gite2c3011

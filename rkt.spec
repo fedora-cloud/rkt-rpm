@@ -25,15 +25,15 @@
 
 %global git0 https://%{provider}.%{provider_tld}/%{project}/%{repo}
 %global import_path %{provider}.%{provider_tld}/%{project}/%{repo}
-%global commit0 adc2bbd495bed63b4161fbe35e990a9db1ebadca
+%global commit0 b6a73a7c7e577b62f0090d7e7a09772d4add2823
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # valid values: coreos usr-from-src usr-from-host
 %global stage1_flavors host
 
 Name: %{repo}
-Version: 1.2.1
-Release: 2.git%{shortcommit0}%{?dist}
+Version: 1.3.0
+Release: 1.git%{shortcommit0}%{?dist}
 Summary: CLI for running app containers
 License: ASL 2.0
 URL: https://%{import_path}
@@ -306,6 +306,10 @@ exit 0
 %{_sharedstatedir}/%{name}
 
 %changelog
+* Sat Apr 02 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.3.0-1.gitb6a73a7
+- Resolves: rhbz#1323388 - bump to v1.3.0
+- built commit#b6a73a7
+
 * Wed Mar 30 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.2.1-2.gitadc2bbd
 - built commit#adc2bbd
 

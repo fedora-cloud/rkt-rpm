@@ -25,14 +25,14 @@
 
 %global git0 https://%{provider}.%{provider_tld}/%{project}/%{repo}
 %global import_path %{provider}.%{provider_tld}/%{project}/%{repo}
-%global commit0 38b4462943cb407d24f97dc8b189a5395445404c
+%global commit0 7740f9ddbe69a2f8d0cb61728f2ee5a7484d9df5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # valid values: coreos usr-from-src usr-from-host
 %global stage1_flavors host
 
 Name: %{repo}
-Version: 1.5.1
+Version: 1.6.0
 Release: 1.git%{shortcommit0}%{?dist}
 Summary: CLI for running app containers
 License: ASL 2.0
@@ -306,6 +306,10 @@ exit 0
 %{_sharedstatedir}/%{name}
 
 %changelog
+* Sat May 14 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.6.0-1.git7740f9d
+- Resolves: #1336072 - bump to v1.6.0
+- built commit 7740f9d
+
 * Fri May 06 2016 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.5.1-1.git38b4462
 - Resolves: #1327805 - bump to v1.5.1
 - built commit 38b4462
